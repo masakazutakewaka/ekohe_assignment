@@ -4,12 +4,12 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    if params.key?(:keyword)
-      res = Article.search(params[:keyword])
-      @articles = res.records
-    else
-      @articles = Article.all
-    end
+    @articles = if params.key?(:keyword)
+                  res = Article.search(params[:keyword])
+                  res.records.page(params[:page])
+                else
+                  Article.page(params[:page])
+                end
   end
 
   # GET /articles/1

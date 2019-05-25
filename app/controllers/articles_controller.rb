@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:new, :edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -67,6 +68,14 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+    def require_login
+      unless current_user
+        flash[:alert] = "You must be logged in to access this section"
+      redirect_to login_path
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])

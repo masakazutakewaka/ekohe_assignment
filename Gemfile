@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'elasticsearch-model', '~> 7.0.0.pre'
 gem 'elasticsearch-rails', '~> 7.0.0.pre'
+gem 'kaminari'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

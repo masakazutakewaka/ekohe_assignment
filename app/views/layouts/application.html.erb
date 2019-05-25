@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
+    <%= render "layouts/header" unless (current_page?('/login') || current_page?('/signup')) %>
     <%=yield %>
   </body>
 </html>

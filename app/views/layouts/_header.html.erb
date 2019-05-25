@@ -6,3 +6,14 @@
   or
   <%= link_to "Log In", login_path %>
 <% end %>
+
+<%= form_with(url: articles_path, method: :get) do |form| %>
+  <div class="field">
+    <%= form.label :keyword %>
+    <%= form.text_field :keyword %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

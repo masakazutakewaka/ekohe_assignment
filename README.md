@@ -3,8 +3,11 @@ A basic blog.
 
 ## Versions
 Ruby 2.6.3
+
 Rails 6.0.0.rc1
+
 PostgreSQL latest
+
 ElasticSearch 7.1.0
 
 ## Usage

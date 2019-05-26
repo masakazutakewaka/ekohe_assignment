@@ -17,26 +17,21 @@
   </div>
 
   <div class="field">
+    <%= form.label :is_published %>
+    <%= form.check_box :publish_flag, {}, 'draft', 'published' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publish_date %>
+    <%= form.datetime_select :published_at %>
+  </div>
+
+  <div class="field">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :publish_flag %>
-    <%= form.check_box :publish_flag %>
-  </div>
-
-  <div class="field">
-    <%= form.label :published_at %>
-    <%= form.datetime_select :published_at %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Save' %>
   </div>
 <% end %>

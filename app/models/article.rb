@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
   include Elasticsearch::Model
+  index_name "#{Rails.env}_articles"
 
   belongs_to :user
 

@@ -9,10 +9,10 @@ class ElasticSearchIndexArticlesJob < ApplicationJob
     case operation.to_s
       when /index/
         article = Article.find(id)
-        Client.index  index: 'articles', type: 'article', id: article.id, body: article.__elasticsearch__.as_indexed_json
+        Client.index  index: "#{Rails.env}_articles", type: '_doc', id: article.id, body: article.__elasticsearch__.as_indexed_json
       when /delete/
         begin
-          Client.delete index: 'articles', type: 'article', id: id
+          Client.delete index: "#{Rails.env}_articles", type: '_doc', id: id
         rescue Elasticsearch::Transport::Transport::Errors::NotFound
           logger.debug "Article not found, ID: #{id}"
         end

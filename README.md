@@ -1,24 +1,18 @@
-# README
+# Ekohe interview assignment
+A basic blog.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usage
 
-Things you may want to cover:
+```
+# cd /path/to/ekohe_assignment
+$ docker-compose up -d
+$ bundle
+$ bundle exec rails db:setup
+$ bundle exec rails s
+```
 
-* Ruby version
+Open localhost:3000 in your browser.
 
-* System dependencies
+## License
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The source code is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
